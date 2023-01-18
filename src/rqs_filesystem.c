@@ -69,7 +69,7 @@ struct RQS_transformData* rqs_read_tags(struct rqs_filename_info file_data) {
 		double* tiepoints;
 		double* tiematrix;
 
-	    TIFFGetField(tiff, TIFFTAG_GEOTRANSMATRIX, &tmp, &tiematrix);
+		TIFFGetField(tiff, TIFFTAG_GEOTRANSMATRIX, &tmp, &tiematrix);
 		
 		TIFFGetField(tiff, TIFFTAG_IMAGEWIDTH, &width);
 		TIFFGetField(tiff, TIFFTAG_IMAGELENGTH, &height);
@@ -78,10 +78,11 @@ struct RQS_transformData* rqs_read_tags(struct rqs_filename_info file_data) {
 		file_transform[elem].ysize = height;
 		file_transform[elem].res = make_ll(resolution[0], resolution[1]);
 
-
+			
+		/*
 		for(int i = 0; i < 6; ++i)
 			printf("%f\n", tiematrix[i]);
-
+		*/
 	}
 	return file_transform;
 }
